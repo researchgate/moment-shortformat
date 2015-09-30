@@ -1,0 +1,35 @@
+{
+  "name": "moment-shortformat",
+  "version": "0.1.0",
+  "description": "An extension to moment.js that formats dates in a short format like on ResearchGate",
+  "main": "moment-shortformat.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/researchgate/moment-shortformat.git"
+  },
+  "keywords": [
+    "momentjs",
+    "moment",
+    "date",
+    "short",
+    "researchgate"
+  ],
+  "author": "Daniel Tschinder <daniel.tschinder@researchgate.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/researchgate/moment-shortformat/issues"
+  },
+  "dependencies": {
+    "moment": "^2.4.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-coffeelint": "0.0.7",
+    "grunt-release": "~0.6.0",
+    "grunt-bump": "0.0.13"
+  }
+}

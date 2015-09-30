@@ -1,0 +1,28 @@
+{
+  "name": "moment-shortformat",
+  "version": "0.1.0",
+  "homepage": "https://github.com/researchgate/moment-shortformat",
+  "authors": [
+    "Daniel Tschinder <daniel.tschinder@researchgate.net>"
+  ],
+  "description": "An extension to moment.js that formats dates in a short format like on ResearchGate",
+  "main": "moment-shortformat.js",
+  "keywords": [
+    "momentjs",
+    "moment",
+    "date",
+    "short",
+    "researchgate"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "^2.4.0"
+  }
+}
