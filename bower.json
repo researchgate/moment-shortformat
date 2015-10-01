@@ -5,7 +5,7 @@
   "authors": [
     "Daniel Tschinder <daniel.tschinder@researchgate.net>"
   ],
-  "description": "An extension to moment.js that formats dates in a short format like on ResearchGate",
+  "description": "An extension to moment.js that formats dates in a short format like it's used on ResearchGate.",
   "main": "moment-shortformat.js",
   "keywords": [
     "momentjs",
