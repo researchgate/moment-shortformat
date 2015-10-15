@@ -1,4 +1,4 @@
-Short Date Formatter [![Build Status](https://travis-ci.org/researchgate/moment-shortformat.png?branch=master)](https://travis-ci.org/researchgate/moment-shortformat)
+Short Date Formatter [![Build Status](https://travis-ci.org/researchgate/moment-shortformat.png?branch=master)](https://travis-ci.org/researchgate/moment-shortformat) [![npm](https://img.shields.io/npm/v/moment-shortformat.svg)](https://www.npmjs.com/package/moment-shortformat)
 ==================================================
 
 moment-shortformat.js is an extension to moment.js that formats dates in a short format like it's used on ResearchGate.
