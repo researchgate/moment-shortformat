@@ -26,7 +26,8 @@
     "moment": "^2.4.0"
   },
   "devDependencies": {
-    "tape": "^4.0.0",
-    "faucet": "^0.0.1"
+    "faucet": "^0.0.1",
+    "moment": "^2.4.0",
+    "tape": "^4.0.0"
   }
 }
