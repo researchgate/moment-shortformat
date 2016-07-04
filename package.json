@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/researchgate/moment-shortformat/issues"
   },
-  "dependencies": {
+  "peerDependencies": {
     "moment": "^2.4.0"
   },
   "devDependencies": {
