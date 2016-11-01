@@ -17,6 +17,9 @@
     "short",
     "researchgate"
   ],
+  "engines": {
+    "node": ">= 4"
+  },
   "author": "Daniel Tschinder <daniel.tschinder@researchgate.net>",
   "license": "MIT",
   "bugs": {
