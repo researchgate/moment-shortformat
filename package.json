@@ -4,7 +4,7 @@
   "description": "An extension to moment.js that formats dates in a short format like it's used on ResearchGate.",
   "main": "moment-shortformat.js",
   "scripts": {
-    "test": "tape test/*.js | faucet"
+    "test": "ava"
   },
   "repository": {
     "type": "git",
@@ -29,8 +29,7 @@
     "moment": "^2.4.0"
   },
   "devDependencies": {
-    "faucet": "^0.0.1",
-    "moment": "^2.4.0",
-    "tape": "^4.0.0"
+    "ava": "^0.16.0",
+    "moment": "^2.4.0"
   }
 }
