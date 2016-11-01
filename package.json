@@ -4,6 +4,7 @@
   "description": "An extension to moment.js that formats dates in a short format like it's used on ResearchGate.",
   "main": "moment-shortformat.js",
   "scripts": {
+    "preversion": "npm test",
     "test": "ava"
   },
   "repository": {
