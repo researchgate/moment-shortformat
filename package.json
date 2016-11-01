@@ -7,6 +7,9 @@
     "preversion": "npm test",
     "test": "ava"
   },
+  "files": [
+    "moment-shortformat.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/researchgate/moment-shortformat.git"
