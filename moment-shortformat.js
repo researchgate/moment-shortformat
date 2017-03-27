@@ -8,9 +8,9 @@
 
   initialize = function(moment) {
     var shortFormat;
-    shortFormat = function(withoutPreOrSuffix) {
-      var diff, now, num, result, unit;
-      now = moment();
+    shortFormat = function(withoutPreOrSuffix, now) {
+      var diff, num, result, unit;
+      now = now || moment();
       diff = Math.abs(this.diff(now));
       unit = null;
       num = null;
@@ -38,8 +38,8 @@
       return result;
     };
 
-    moment.fn.short = function(withoutPreOrSuffix) {
-      return shortFormat.call(this, withoutPreOrSuffix);
+    moment.fn.short = function(withoutPreOrSuffix, now) {
+      return shortFormat.call(this, withoutPreOrSuffix, now);
     };
 
     return moment;
