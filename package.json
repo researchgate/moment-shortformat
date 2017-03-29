@@ -1,6 +1,6 @@
 {
   "name": "moment-shortformat",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "An extension to moment.js that formats dates in a short format like it's used on ResearchGate.",
   "main": "moment-shortformat.js",
   "scripts": {
