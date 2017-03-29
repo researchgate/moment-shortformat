@@ -9,8 +9,8 @@ Absolute time difference     | output of moment.short()
 1 to 59 minutes              | `1m` to `59m`
 1 to 23 hours                | `1h` to `23h`
 1 to 6 days                  | `1d` to `6d`
->= 7 days but same year      | e.g `Sep 3` or `Feb 28`
->= 7 days but different year | e.g `Sep 3, 2023` or `Feb 28, 1989`
+&gt;= 7 days but same year      | e.g `Sep 3` or `Feb 28`
+&gt;= 7 days but different year | e.g `Sep 3, 2023` or `Feb 28, 1989`
 
 It works for both negative and positive time differences.
 
