@@ -1,15 +1,17 @@
 import test from 'ava';
 import moment from '../moment-shortformat';
 
-test.beforeEach((t) => {
-    var customTimeMs = moment().valueOf();
+var realMomentNow = moment.now;
+test.before((t) => {
+    var customTimeMs = moment('2017-02-01').valueOf();
     // As per http://momentjs.com/docs/#/customization/now/
     moment.now = function() {
         return customTimeMs;
     }
 });
 
-test.afterEach((t) => {
+test.after((t) => {
+    moment.now = realMomentNow;
 });
 
 test('test seconds ago without suffix', (t) => {
