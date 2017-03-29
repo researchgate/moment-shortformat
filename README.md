@@ -42,11 +42,13 @@ Works on both past and future dates.
 
 ### Methods
 
-#### `moment().short(Boolean)`
+#### `moment().short(Boolean, now)`
 
 Short formatting the time difference and prefixing or suffixing the formatted time by using [moment.js relativeTime templates](http://momentjs.com/docs/#/customization/relative-time/) `future` and `past`. (default `in %s` and `%s ago`)
 
 If the boolean parameter is set to true the date format will not be prefixed or suffixed. 
+
+If the now parameter is set to a moment() it will use that as the "now" difference
 
 __Examples:__
 
@@ -65,4 +67,9 @@ if the year of the date does not match the current year it is convert to `Mar 7,
 ```
 moment(moment() + 6048e5).short()
 // Mar 7
+```
+
+Using a different "now"
+```
+moment(moment() + (36e5 * 5)).short(false, moment() + (36e5 * 3)) // in 2h
 ```
