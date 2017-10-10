@@ -18,12 +18,12 @@ It works for both negative and positive time differences.
 
 Works with AMD, CommonJS and browser environments.
 
-```javascript
+```js
 // AMD
 define(['moment-shortformat'], function(moment) { moment().short() });
 ```
 
-```javascript
+```js
 // CommonJS
 var moment = require('moment-shortformat');
 moment().short()
@@ -54,7 +54,7 @@ __Examples:__
 
 Formats time relative to current time.
 
-```
+```js
 moment(moment() + (36e5 * 5)).short() // in 5h
 moment(moment() - (36e5 * 5)).short() // 5h ago
 moment(moment() + (36e5 * 5)).short(true) // 5h
@@ -64,12 +64,12 @@ moment(moment() - (36e5 * 5)).short(true) // 5h
 Times greater than 1 week are converted to dates like `Mar 7`, or
 if the year of the date does not match the current year it is convert to `Mar 7, 2031`
 
-```
+```js
 moment(moment() + 6048e5).short()
 // Mar 7
 ```
 
 Using a different "now"
-```
+```js
 moment(moment() + (36e5 * 5)).short(false, moment() + (36e5 * 3)) // in 2h
 ```
