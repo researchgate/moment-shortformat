@@ -1,8 +1,7 @@
-import test from 'ava';
-import moment from '../moment-shortformat';
+const moment = require('../moment-shortformat');
 
 var realMomentNow = moment.now;
-test.before((t) => {
+beforeEach(() => {
     var customTimeMs = moment('2017-02-01').valueOf();
     // As per http://momentjs.com/docs/#/customization/now/
     moment.now = function() {
@@ -10,70 +9,70 @@ test.before((t) => {
     }
 });
 
-test.after((t) => {
+afterEach(() => {
     moment.now = realMomentNow;
 });
 
-test('test seconds ago without suffix', (t) => {
-    t.is(moment().subtract(25, 'seconds').short(true), '25s');
-    t.is(moment().subtract(25, 'seconds').short(true, moment().subtract(20, 'seconds')), '5s');
+test('test seconds ago without suffix', () => {
+    expect(moment().subtract(25, 'seconds').short(true)).toBe('25s');
+    expect(moment().subtract(25, 'seconds').short(true, moment().subtract(20, 'seconds'))).toBe('5s');
 });
 
-test('test seconds in future without prefix', (t) => {
-    t.is(moment().add(25, 'seconds').short(true), '25s');
-    t.is(moment().add(25, 'seconds').short(true, moment().add(20, 'seconds')), '5s');
+test('test seconds in future without prefix', () => {
+    expect(moment().add(25, 'seconds').short(true)).toBe('25s');
+    expect(moment().add(25, 'seconds').short(true, moment().add(20, 'seconds'))).toBe('5s');
 });
 
-test('test minutes ago without suffix', (t) => {
-    t.is(moment().subtract(5, 'minutes').short(true), '5m');
-    t.is(moment().subtract(5, 'minutes').short(true, moment().subtract(4, 'minutes')), '1m');
+test('test minutes ago without suffix', () => {
+    expect(moment().subtract(5, 'minutes').short(true)).toBe('5m');
+    expect(moment().subtract(5, 'minutes').short(true, moment().subtract(4, 'minutes'))).toBe('1m');
 });
 
-test('test minutes in future without prefix', (t) => {
-    t.is(moment().add(5, 'minutes').short(true), '5m');
-    t.is(moment().add(5, 'minutes').short(true, moment().add(4, 'minutes')), '1m');
+test('test minutes in future without prefix', () => {
+    expect(moment().add(5, 'minutes').short(true)).toBe('5m');
+    expect(moment().add(5, 'minutes').short(true, moment().add(4, 'minutes'))).toBe('1m');
 });
 
-test('test hours ago without suffix', (t) => {
-    t.is(moment().subtract(5, 'hours').short(true), '5h');
-    t.is(moment().subtract(5, 'hours').short(true, moment().subtract(4, 'hours')), '1h');
+test('test hours ago without suffix', () => {
+    expect(moment().subtract(5, 'hours').short(true)).toBe('5h');
+    expect(moment().subtract(5, 'hours').short(true, moment().subtract(4, 'hours'))).toBe('1h');
 });
 
-test('test hours in future without prefix', (t) => {
-    t.is(moment().add(5, 'hours').short(true), '5h');
-    t.is(moment().add(5, 'hours').short(true, moment().add(4, 'hours')), '1h');
+test('test hours in future without prefix', () => {
+    expect(moment().add(5, 'hours').short(true)).toBe('5h');
+    expect(moment().add(5, 'hours').short(true, moment().add(4, 'hours'))).toBe('1h');
 });
 
-test('test days ago without suffix', (t) => {
-    t.is(moment().subtract(5, 'days').short(true), '5d');
-    t.is(moment().subtract(5, 'days').short(true, moment().subtract(4, 'days')), '1d');
+test('test days ago without suffix', () => {
+    expect(moment().subtract(5, 'days').short(true)).toBe('5d');
+    expect(moment().subtract(5, 'days').short(true, moment().subtract(4, 'days'))).toBe('1d');
 });
 
-test('test days in future without prefix', (t) => {
-    t.is(moment().add(5, 'days').short(true), '5d');
-    t.is(moment().add(5, 'days').short(true, moment().add(4, 'days')), '1d');
+test('test days in future without prefix', () => {
+    expect(moment().add(5, 'days').short(true)).toBe('5d');
+    expect(moment().add(5, 'days').short(true, moment().add(4, 'days'))).toBe('1d');
 });
 
-test('test weeks ago ignoring param', (t) => {
+test('test weeks ago ignoring param', () => {
     var daysago = moment().subtract(8, 'days');
-    t.is(daysago.short(true), daysago.format('MMM D'));
-    t.is(daysago.short(true, moment().subtract(1, 'days')), daysago.format('MMM D'));
+    expect(daysago.short(true)).toBe(daysago.format('MMM D'));
+    expect(daysago.short(true, moment().subtract(1, 'days'))).toBe(daysago.format('MMM D'));
 });
 
-test('test weeks in future ignoring param', (t) => {
+test('test weeks in future ignoring param', () => {
     var daysago = moment().add(8, 'days');
-    t.is(daysago.short(true), daysago.format('MMM D'));
-    t.is(daysago.short(true, moment().add(1, 'days')), daysago.format('MMM D'));
+    expect(daysago.short(true)).toBe(daysago.format('MMM D'));
+    expect(daysago.short(true, moment().add(1, 'days'))).toBe(daysago.format('MMM D'));
 });
 
-test('test weeks last year ignoring param', (t) => {
+test('test weeks last year ignoring param', () => {
     var daysago = moment().subtract(370, 'days');
-    t.is(daysago.short(true), daysago.format('MMM D, YYYY'));
-    t.is(daysago.short(true, moment().subtract(1, 'days')), daysago.format('MMM D, YYYY'));
+    expect(daysago.short(true)).toBe(daysago.format('MMM D, YYYY'));
+    expect(daysago.short(true, moment().subtract(1, 'days'))).toBe(daysago.format('MMM D, YYYY'));
 });
 
-test('test weeks next year ignoring param', (t) => {
+test('test weeks next year ignoring param', () => {
     var daysago = moment().add(370, 'days');
-    t.is(daysago.short(true), daysago.format('MMM D, YYYY'));
-    t.is(daysago.short(true, moment().add(1, 'days')), daysago.format('MMM D, YYYY'));
+    expect(daysago.short(true)).toBe(daysago.format('MMM D, YYYY'));
+    expect(daysago.short(true, moment().add(1, 'days'))).toBe(daysago.format('MMM D, YYYY'));
 });
