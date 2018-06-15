@@ -23,7 +23,7 @@
         unit = 'hours';
       } else if (diff < week) {
         unit = 'days';
-      } else if (this.year() != now.year()) {
+      } else if (this.year() != (moment.isMoment(now) ? now : moment(now)).year()) {
         return this.format('MMM D, YYYY');
       } else {
         return this.format('MMM D');
